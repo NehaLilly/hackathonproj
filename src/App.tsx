@@ -5,6 +5,7 @@ import ApplianceForm from './components/ApplianceForm';
 import BillPredictor from './components/BillPredictor';
 import EnergyTips from './components/EnergyTips';
 import BillSettings from './components/BillSettings';
+import ChatBot from './components/ChatBot';
 import { Appliance, BillCalculation, BillSettings as BillSettingsType } from './types';
 import { calculateBill } from './utils/calculations';
 
@@ -153,14 +154,14 @@ function App() {
         )}
       </main>
       {billData && (
-  <BoltChatBot
-    prediction={{
-      usageLevel: billData.monthlyBill > 1500 ? 'high' : 'medium',
-      currentMonth: billData.monthlyBill,
-      potentialSavings: billData.monthlyBill * 0.25,
-    }}
-  />
-)}
+        <ChatBot
+          prediction={{
+            usageLevel: billData.monthlyBill > 1500 ? 'high' : 'medium',
+            currentMonth: billData.monthlyBill,
+            potentialSavings: billData.monthlyBill * 0.25,
+          }}
+        />
+      )}
     </div>
   );
 }
