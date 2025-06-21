@@ -152,6 +152,15 @@ function App() {
           <EnergyTips billData={billData} />
         )}
       </main>
+      {billData && (
+  <BoltChatBot
+    prediction={{
+      usageLevel: billData.monthlyBill > 1500 ? 'high' : 'medium',
+      currentMonth: billData.monthlyBill,
+      potentialSavings: billData.monthlyBill * 0.25,
+    }}
+  />
+)}
     </div>
   );
 }
