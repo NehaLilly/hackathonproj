@@ -1,3 +1,4 @@
+import { BoltChatBot } from './components/BoltChatBot';
 import React, { useState, useEffect } from 'react';
 import { Calculator, Zap, Home, TrendingUp, Lightbulb, Settings as SettingsIcon } from 'lucide-react';
 import ApplianceForm from './components/ApplianceForm';
