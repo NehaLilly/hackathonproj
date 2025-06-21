@@ -1,3 +1,4 @@
+import { BoltChatBot } from './components/BoltChatBot';
 import React, { useState, useEffect } from 'react';
 import { Calculator, Zap, Home, TrendingUp, Lightbulb, Settings as SettingsIcon } from 'lucide-react';
 import ApplianceForm from './components/ApplianceForm';
@@ -152,9 +153,15 @@ function App() {
           <EnergyTips billData={billData} />
         )}
       </main>
-
-      {/* ChatBot Component */}
-      <ChatBot billData={billData} appliances={appliances} />
+      {billData && (
+        <ChatBot
+          prediction={{
+            usageLevel: billData.monthlyBill > 1500 ? 'high' : 'medium',
+            currentMonth: billData.monthlyBill,
+            potentialSavings: billData.monthlyBill * 0.25,
+          }}
+        />
+      )}
     </div>
   );
 }
