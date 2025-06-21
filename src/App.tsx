@@ -1,3 +1,4 @@
+import { BoltChatBot } from './components/BoltChatBot'; // adjust if in a different folder
 import React, { useState, useEffect } from 'react';
 import { Calculator, Zap, Home, TrendingUp, Lightbulb, Settings as SettingsIcon } from 'lucide-react';
 import ApplianceForm from './components/ApplianceForm';
@@ -151,6 +152,15 @@ function App() {
           <EnergyTips billData={billData} />
         )}
       </main>
+      {billData && (
+  <BoltChatBot
+    prediction={{
+      usageLevel: billData.monthlyBill > 1500 ? 'high' : 'medium',
+      currentMonth: billData.monthlyBill,
+      potentialSavings: billData.monthlyBill * 0.25, // example: 25% savings tip
+    }}
+  />
+)}
     </div>
   );
 }
