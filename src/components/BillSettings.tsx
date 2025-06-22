@@ -96,9 +96,9 @@ export default function BillSettings({ settings, onSettingsChange }: Props) {
             onChange={(e) => updateSetting('homeSize', e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
-            <option value="small">Small (&lt;1,500 sq ft)</option>
+            <option value="small">Small (<1,500 sq ft)</option>
             <option value="medium">Medium (1,500-2,500 sq ft)</option>
-            <option value="large">Large (&gt;2,500 sq ft)</option>
+            <option value="large">Large (>2,500 sq ft)</option>
           </select>
         </div>
 

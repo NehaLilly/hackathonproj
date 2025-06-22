@@ -4,7 +4,6 @@ import ApplianceForm from './components/ApplianceForm';
 import BillPredictor from './components/BillPredictor';
 import EnergyTips from './components/EnergyTips';
 import BillSettings from './components/BillSettings';
-import ChatBot from './components/ChatBot';
 import { Appliance, BillCalculation, BillSettings as BillSettingsType } from './types';
 import { calculateBill } from './utils/calculations';
 
@@ -152,9 +151,6 @@ function App() {
           <EnergyTips billData={billData} />
         )}
       </main>
-
-      {/* ChatBot Component */}
-      <ChatBot billData={billData} appliances={appliances} />
     </div>
   );
 }
